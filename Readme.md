@@ -60,7 +60,7 @@ The user may also run all the nodes seperately using `rosrun`.
 In order to set the new target, simply type in two floats x,y in the terminal like below
 
 ```bash
-5,6
+http://127.0.0.1:8888/notebooks/src/Assignment_2_2023/ros_ws/src/assignment_2_2023/scripts/RT2_Assignment.ipynb
 ```
 
 ### Cancel the goal
