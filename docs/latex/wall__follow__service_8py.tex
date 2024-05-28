@@ -1,0 +1,213 @@
+\hypertarget{wall__follow__service_8py}{}\doxysection{scripts/wall\+\_\+follow\+\_\+service.py File Reference}
+\label{wall__follow__service_8py}\index{scripts/wall\_follow\_service.py@{scripts/wall\_follow\_service.py}}
+
+
+Implements wall following behavior for a robot.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{wall__follow__service_8py_aa62fc1c79bf46bcbfc6cfa338feb1bc1}{wall\+\_\+follow\+\_\+service.\+wall\+\_\+follower\+\_\+switch}} (req)
+\begin{DoxyCompactList}\small\item\em Service callback to switch the wall follower on or off. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_a081b7835272ee06e51efdce2918f19f1}{wall\+\_\+follow\+\_\+service.\+clbk\+\_\+laser}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback for laser scan data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_a78f097ddc9b97580d9f54d95f9c0e321}{wall\+\_\+follow\+\_\+service.\+change\+\_\+state}} (state)
+\begin{DoxyCompactList}\small\item\em Change the state of the state machine. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_abf15ac3f10e8607383ca78f3056c8a14}{wall\+\_\+follow\+\_\+service.\+take\+\_\+action}} ()
+\begin{DoxyCompactList}\small\item\em Take appropriate action based on the regions data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_ad468da59b5a24f5e71d1f8c6381c5384}{wall\+\_\+follow\+\_\+service.\+find\+\_\+wall}} ()
+\begin{DoxyCompactList}\small\item\em Find the wall by moving forward and turning slightly. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_a47da44503aa8f452b553ccf419940d3c}{wall\+\_\+follow\+\_\+service.\+turn\+\_\+left}} ()
+\begin{DoxyCompactList}\small\item\em Turn left in place. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_a333a30da2a8f24e46f7b900df6624d65}{wall\+\_\+follow\+\_\+service.\+follow\+\_\+the\+\_\+wall}} ()
+\begin{DoxyCompactList}\small\item\em Follow the wall by moving forward. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{wall__follow__service_8py_af098a5a5d743dd6860f1403083e4b17d}{wall\+\_\+follow\+\_\+service.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to initialize the node and control loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{wall__follow__service_8py_ad909574f259c916146de0367c7706e36}\label{wall__follow__service_8py_ad909574f259c916146de0367c7706e36}} 
+bool {\bfseries wall\+\_\+follow\+\_\+service.\+active\+\_\+} = False
+\item 
+\mbox{\Hypertarget{wall__follow__service_8py_af90deadd716ff3782b83a6a3d9152585}\label{wall__follow__service_8py_af90deadd716ff3782b83a6a3d9152585}} 
+{\bfseries wall\+\_\+follow\+\_\+service.\+pub\+\_\+} = None
+\item 
+dictionary {\bfseries wall\+\_\+follow\+\_\+service.\+regions\+\_\+}
+\item 
+\mbox{\Hypertarget{wall__follow__service_8py_aa57f38071ffa0bc40246d2287613be64}\label{wall__follow__service_8py_aa57f38071ffa0bc40246d2287613be64}} 
+int {\bfseries wall\+\_\+follow\+\_\+service.\+state\+\_\+} = 0
+\item 
+dictionary {\bfseries wall\+\_\+follow\+\_\+service.\+state\+\_\+dict\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements wall following behavior for a robot. 
+
+\begin{DoxyAuthor}{Author}
+Kohei Tateyama 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/04/2024
+\end{DoxyDate}
+This code subscribes to laser scan data and publishes velocity commands to follow walls. It uses a service to switch the wall following behavior on and off. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{wall__follow__service_8py_a78f097ddc9b97580d9f54d95f9c0e321}\label{wall__follow__service_8py_a78f097ddc9b97580d9f54d95f9c0e321}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+change\+\_\+state (\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+
+
+Change the state of the state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & New state to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_a081b7835272ee06e51efdce2918f19f1}\label{wall__follow__service_8py_a081b7835272ee06e51efdce2918f19f1}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!clbk\_laser@{clbk\_laser}}
+\index{clbk\_laser@{clbk\_laser}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{clbk\_laser()}{clbk\_laser()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+clbk\+\_\+laser (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback for laser scan data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Laser\+Scan message containing the distance measurements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_ad468da59b5a24f5e71d1f8c6381c5384}\label{wall__follow__service_8py_ad468da59b5a24f5e71d1f8c6381c5384}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!find\_wall@{find\_wall}}
+\index{find\_wall@{find\_wall}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{find\_wall()}{find\_wall()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+find\+\_\+wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Find the wall by moving forward and turning slightly. 
+
+\begin{DoxyReturn}{Returns}
+Twist message with linear and angular velocities. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_a333a30da2a8f24e46f7b900df6624d65}\label{wall__follow__service_8py_a333a30da2a8f24e46f7b900df6624d65}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!follow\_the\_wall@{follow\_the\_wall}}
+\index{follow\_the\_wall@{follow\_the\_wall}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{follow\_the\_wall()}{follow\_the\_wall()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+follow\+\_\+the\+\_\+wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Follow the wall by moving forward. 
+
+\begin{DoxyReturn}{Returns}
+Twist message with linear velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_af098a5a5d743dd6860f1403083e4b17d}\label{wall__follow__service_8py_af098a5a5d743dd6860f1403083e4b17d}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!main@{main}}
+\index{main@{main}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize the node and control loop. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_abf15ac3f10e8607383ca78f3056c8a14}\label{wall__follow__service_8py_abf15ac3f10e8607383ca78f3056c8a14}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!take\_action@{take\_action}}
+\index{take\_action@{take\_action}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{take\_action()}{take\_action()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+take\+\_\+action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Take appropriate action based on the regions data. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_a47da44503aa8f452b553ccf419940d3c}\label{wall__follow__service_8py_a47da44503aa8f452b553ccf419940d3c}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!turn\_left@{turn\_left}}
+\index{turn\_left@{turn\_left}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{turn\_left()}{turn\_left()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+turn\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turn left in place. 
+
+\begin{DoxyReturn}{Returns}
+Twist message with angular velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{wall__follow__service_8py_aa62fc1c79bf46bcbfc6cfa338feb1bc1}\label{wall__follow__service_8py_aa62fc1c79bf46bcbfc6cfa338feb1bc1}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!wall\_follower\_switch@{wall\_follower\_switch}}
+\index{wall\_follower\_switch@{wall\_follower\_switch}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{wall\_follower\_switch()}{wall\_follower\_switch()}}
+{\footnotesize\ttfamily def wall\+\_\+follow\+\_\+service.\+wall\+\_\+follower\+\_\+switch (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+Service callback to switch the wall follower on or off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing the activation state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Set\+Bool\+Response indicating success. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{wall__follow__service_8py_ab578b170aebbf718a0237e84d002876f}\label{wall__follow__service_8py_ab578b170aebbf718a0237e84d002876f}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!regions\_@{regions\_}}
+\index{regions\_@{regions\_}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{regions\_}{regions\_}}
+{\footnotesize\ttfamily dictionary wall\+\_\+follow\+\_\+service.\+regions\+\_\+}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     \textcolor{stringliteral}{'right'}: 0,}
+\DoxyCodeLine{3     \textcolor{stringliteral}{'fright'}: 0,}
+\DoxyCodeLine{4     \textcolor{stringliteral}{'front'}: 0,}
+\DoxyCodeLine{5     \textcolor{stringliteral}{'fleft'}: 0,}
+\DoxyCodeLine{6     \textcolor{stringliteral}{'left'}: 0,}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{wall__follow__service_8py_aa31ff1bd4c42cb00736568f9b7a8e0d0}\label{wall__follow__service_8py_aa31ff1bd4c42cb00736568f9b7a8e0d0}} 
+\index{wall\_follow\_service.py@{wall\_follow\_service.py}!state\_dict\_@{state\_dict\_}}
+\index{state\_dict\_@{state\_dict\_}!wall\_follow\_service.py@{wall\_follow\_service.py}}
+\doxysubsubsection{\texorpdfstring{state\_dict\_}{state\_dict\_}}
+{\footnotesize\ttfamily dictionary wall\+\_\+follow\+\_\+service.\+state\+\_\+dict\+\_\+}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     0: \textcolor{stringliteral}{'find the wall'},}
+\DoxyCodeLine{3     1: \textcolor{stringliteral}{'turn left'},}
+\DoxyCodeLine{4     2: \textcolor{stringliteral}{'follow the wall'},}
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}

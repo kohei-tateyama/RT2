@@ -1,0 +1,78 @@
+\hypertarget{classlast__target_1_1_get_last_target_server}{}\doxysection{last\+\_\+target.\+Get\+Last\+Target\+Server Class Reference}
+\label{classlast__target_1_1_get_last_target_server}\index{last\_target.GetLastTargetServer@{last\_target.GetLastTargetServer}}
+
+
+Service server class for providing the last target position.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a85581ded55bc3ad82447e6fdd60c20c1}\label{classlast__target_1_1_get_last_target_server_a85581ded55bc3ad82447e6fdd60c20c1}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \mbox{\hyperlink{classlast__target_1_1_get_last_target_server_a489818b38ad9787537dfea423d2440fd}{callback}} (self, data)
+\begin{DoxyCompactList}\small\item\em Callback for the goal topic subscription. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classlast__target_1_1_get_last_target_server_a939314f7c5d646309298d03eff0831e9}{callback\+\_\+service}} (self, req)
+\begin{DoxyCompactList}\small\item\em Callback for the Last\+Target service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a8c5ab6d332bbdcbe4f00bc48dc297de2}\label{classlast__target_1_1_get_last_target_server_a8c5ab6d332bbdcbe4f00bc48dc297de2}} 
+{\bfseries last\+\_\+target}
+\item 
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a2a74d8fd8c627f355123452a55252007}\label{classlast__target_1_1_get_last_target_server_a2a74d8fd8c627f355123452a55252007}} 
+{\bfseries target\+\_\+is\+\_\+set}
+\item 
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a0cc7981f0645c9e599b63505f774676e}\label{classlast__target_1_1_get_last_target_server_a0cc7981f0645c9e599b63505f774676e}} 
+{\bfseries service}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service server class for providing the last target position. 
+
+This class initializes the R\+OS node, subscribes to the goal topic, and provides a service to return the last target position. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a489818b38ad9787537dfea423d2440fd}\label{classlast__target_1_1_get_last_target_server_a489818b38ad9787537dfea423d2440fd}} 
+\index{last\_target.GetLastTargetServer@{last\_target.GetLastTargetServer}!callback@{callback}}
+\index{callback@{callback}!last\_target.GetLastTargetServer@{last\_target.GetLastTargetServer}}
+\doxysubsubsection{\texorpdfstring{callback()}{callback()}}
+{\footnotesize\ttfamily def last\+\_\+target.\+Get\+Last\+Target\+Server.\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Callback for the goal topic subscription. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Goal data from /goal\+\_\+topic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlast__target_1_1_get_last_target_server_a939314f7c5d646309298d03eff0831e9}\label{classlast__target_1_1_get_last_target_server_a939314f7c5d646309298d03eff0831e9}} 
+\index{last\_target.GetLastTargetServer@{last\_target.GetLastTargetServer}!callback\_service@{callback\_service}}
+\index{callback\_service@{callback\_service}!last\_target.GetLastTargetServer@{last\_target.GetLastTargetServer}}
+\doxysubsubsection{\texorpdfstring{callback\_service()}{callback\_service()}}
+{\footnotesize\ttfamily def last\+\_\+target.\+Get\+Last\+Target\+Server.\+callback\+\_\+service (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+Callback for the Last\+Target service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request (not used). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last\+Target\+Response with the last target position. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{last__target_8py}{last\+\_\+target.\+py}}\end{DoxyCompactItemize}

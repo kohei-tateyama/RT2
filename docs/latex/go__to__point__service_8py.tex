@@ -1,0 +1,231 @@
+\hypertarget{go__to__point__service_8py}{}\doxysection{scripts/go\+\_\+to\+\_\+point\+\_\+service.py File Reference}
+\label{go__to__point__service_8py}\index{scripts/go\_to\_point\_service.py@{scripts/go\_to\_point\_service.py}}
+
+
+Controls the robot to move to a desired point.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{go__to__point__service_8py_acf2f8e880355dd31df1f330f7f10b7f9}{go\+\_\+to\+\_\+point\+\_\+service.\+go\+\_\+to\+\_\+point\+\_\+switch}} (req)
+\begin{DoxyCompactList}\small\item\em Callback to switch the go\+\_\+to\+\_\+point service. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_adcbe48e090034144d76fea10c6537ac9}{go\+\_\+to\+\_\+point\+\_\+service.\+clbk\+\_\+odom}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback for odometry data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_abb8fd97f7fbaccc6b4f1f80b258c7977}{go\+\_\+to\+\_\+point\+\_\+service.\+change\+\_\+state}} (state)
+\begin{DoxyCompactList}\small\item\em Change the state of the state machine. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_a5cb3225f30d2cdefd5cda701f13e1f9e}{go\+\_\+to\+\_\+point\+\_\+service.\+normalize\+\_\+angle}} (angle)
+\begin{DoxyCompactList}\small\item\em Normalize the angle to be within the range of -\/pi to pi. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_a60e4565e2e2ebffba35774ee78838e77}{go\+\_\+to\+\_\+point\+\_\+service.\+fix\+\_\+yaw}} (des\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Adjust the yaw to face the desired position. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_a531455abf876b239c51ab236f7d459b2}{go\+\_\+to\+\_\+point\+\_\+service.\+go\+\_\+straight\+\_\+ahead}} (des\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Move the robot straight towards the desired position. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_a8fd364cf9483fb92353279ddd13116d0}{go\+\_\+to\+\_\+point\+\_\+service.\+done}} ()
+\begin{DoxyCompactList}\small\item\em Stop the robot by setting velocities to zero. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point__service_8py_aff61ce18210c0b3ae85d5a24810631ef}{go\+\_\+to\+\_\+point\+\_\+service.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to initialize the node and control loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_abe657bd9603dc3f58a1956668813514e}\label{go__to__point__service_8py_abe657bd9603dc3f58a1956668813514e}} 
+bool {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+active\+\_\+} = False
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a7687850055557a27f335be20e994c023}\label{go__to__point__service_8py_a7687850055557a27f335be20e994c023}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_ac0d754b5218554bf0aa6507e08262aa4}\label{go__to__point__service_8py_ac0d754b5218554bf0aa6507e08262aa4}} 
+int {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+yaw\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a7302709bb82adca46efc76daaa821aa7}\label{go__to__point__service_8py_a7302709bb82adca46efc76daaa821aa7}} 
+int {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+state\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a17e47e580dbbf300a91d42e81bb91856}\label{go__to__point__service_8py_a17e47e580dbbf300a91d42e81bb91856}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+desired\+\_\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a2e836af955467ad8d94a57e154023d75}\label{go__to__point__service_8py_a2e836af955467ad8d94a57e154023d75}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+x}
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_af174820ca4271dd1a4a3db2cb16c5582}\label{go__to__point__service_8py_af174820ca4271dd1a4a3db2cb16c5582}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+y}
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a1e0590d4e8fc1de7369864255776b1ac}\label{go__to__point__service_8py_a1e0590d4e8fc1de7369864255776b1ac}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+z}
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a2464d5355e9bb593fa3ab79354a574f1}\label{go__to__point__service_8py_a2464d5355e9bb593fa3ab79354a574f1}} 
+int {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+yaw\+\_\+precision\+\_\+} = math.\+pi / 9
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a53e290ebfa498679a2421356d35ccd0e}\label{go__to__point__service_8py_a53e290ebfa498679a2421356d35ccd0e}} 
+int {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+yaw\+\_\+precision\+\_\+2\+\_\+} = math.\+pi / 90
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_af5f23f6949a7c8902af969b86d59f0ff}\label{go__to__point__service_8py_af5f23f6949a7c8902af969b86d59f0ff}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+dist\+\_\+precision\+\_\+} = 0.\+3
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_aa4dcb2c51349c6a486168f6bc2cdb094}\label{go__to__point__service_8py_aa4dcb2c51349c6a486168f6bc2cdb094}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+kp\+\_\+a} = 3.\+0
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a1dbf3b8830618a71226b15c005c0b5e5}\label{go__to__point__service_8py_a1dbf3b8830618a71226b15c005c0b5e5}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+kp\+\_\+d} = 0.\+2
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_ae65f765636456df7afcf93a22b51038e}\label{go__to__point__service_8py_ae65f765636456df7afcf93a22b51038e}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+ub\+\_\+a} = 0.\+6
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a54d632450f4291a2ff664550f68af893}\label{go__to__point__service_8py_a54d632450f4291a2ff664550f68af893}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+lb\+\_\+a} = -\/0.\+5
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_a6f1913e3ce0b294a3cc1a519079137b9}\label{go__to__point__service_8py_a6f1913e3ce0b294a3cc1a519079137b9}} 
+float {\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+ub\+\_\+d} = 0.\+6
+\item 
+\mbox{\Hypertarget{go__to__point__service_8py_ae04aed6a94addf0dd452dfe17235b8fc}\label{go__to__point__service_8py_ae04aed6a94addf0dd452dfe17235b8fc}} 
+{\bfseries go\+\_\+to\+\_\+point\+\_\+service.\+pub} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the robot to move to a desired point. 
+
+\begin{DoxyAuthor}{Author}
+Kohei Tateyama 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/04/2024
+\end{DoxyDate}
+This code is designed to move the robot to a desired position by adjusting its yaw and moving straight towards the goal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{go__to__point__service_8py_abb8fd97f7fbaccc6b4f1f80b258c7977}\label{go__to__point__service_8py_abb8fd97f7fbaccc6b4f1f80b258c7977}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+change\+\_\+state (\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+
+
+Change the state of the state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & New state to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_adcbe48e090034144d76fea10c6537ac9}\label{go__to__point__service_8py_adcbe48e090034144d76fea10c6537ac9}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!clbk\_odom@{clbk\_odom}}
+\index{clbk\_odom@{clbk\_odom}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback for odometry data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Odometry message containing the robot\textquotesingle{}s position and orientation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_a8fd364cf9483fb92353279ddd13116d0}\label{go__to__point__service_8py_a8fd364cf9483fb92353279ddd13116d0}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!done@{done}}
+\index{done@{done}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the robot by setting velocities to zero. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_a60e4565e2e2ebffba35774ee78838e77}\label{go__to__point__service_8py_a60e4565e2e2ebffba35774ee78838e77}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!fix\_yaw@{fix\_yaw}}
+\index{fix\_yaw@{fix\_yaw}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{fix\_yaw()}{fix\_yaw()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+fix\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Adjust the yaw to face the desired position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+pos} & Desired position to face. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_a531455abf876b239c51ab236f7d459b2}\label{go__to__point__service_8py_a531455abf876b239c51ab236f7d459b2}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!go\_straight\_ahead@{go\_straight\_ahead}}
+\index{go\_straight\_ahead@{go\_straight\_ahead}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{go\_straight\_ahead()}{go\_straight\_ahead()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+go\+\_\+straight\+\_\+ahead (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Move the robot straight towards the desired position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+pos} & Desired position to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_acf2f8e880355dd31df1f330f7f10b7f9}\label{go__to__point__service_8py_acf2f8e880355dd31df1f330f7f10b7f9}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!go\_to\_point\_switch@{go\_to\_point\_switch}}
+\index{go\_to\_point\_switch@{go\_to\_point\_switch}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{go\_to\_point\_switch()}{go\_to\_point\_switch()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+go\+\_\+to\+\_\+point\+\_\+switch (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+Callback to switch the go\+\_\+to\+\_\+point service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request data containing the activation state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Set\+Bool\+Response indicating success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_aff61ce18210c0b3ae85d5a24810631ef}\label{go__to__point__service_8py_aff61ce18210c0b3ae85d5a24810631ef}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!main@{main}}
+\index{main@{main}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize the node and control loop. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{go__to__point__service_8py_a5cb3225f30d2cdefd5cda701f13e1f9e}\label{go__to__point__service_8py_a5cb3225f30d2cdefd5cda701f13e1f9e}} 
+\index{go\_to\_point\_service.py@{go\_to\_point\_service.py}!normalize\_angle@{normalize\_angle}}
+\index{normalize\_angle@{normalize\_angle}!go\_to\_point\_service.py@{go\_to\_point\_service.py}}
+\doxysubsubsection{\texorpdfstring{normalize\_angle()}{normalize\_angle()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+service.\+normalize\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{angle }\end{DoxyParamCaption})}
+
+
+
+Normalize the angle to be within the range of -\/pi to pi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle to be normalized. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized angle. 
+\end{DoxyReturn}

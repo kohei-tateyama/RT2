@@ -1,0 +1,78 @@
+\hypertarget{classaction__client_1_1_client}{}\doxysection{action\+\_\+client.\+Client Class Reference}
+\label{classaction__client_1_1_client}\index{action\_client.Client@{action\_client.Client}}
+
+
+Action client for controlling the robot.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classaction__client_1_1_client_ac3bb7e03825808b788a1617d85d0eb9f}\label{classaction__client_1_1_client_ac3bb7e03825808b788a1617d85d0eb9f}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \mbox{\hyperlink{classaction__client_1_1_client_ae87e9a7f217a480736fc8160783e62d4}{callback\+\_\+odom}} (self, data)
+\begin{DoxyCompactList}\small\item\em Callback for odometry. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classaction__client_1_1_client_a733699a6967db10e340772d495f94474}{callback\+\_\+goal}} (self, data)
+\begin{DoxyCompactList}\small\item\em Callback for goal status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classaction__client_1_1_client_a34470c1ce76859a768a6623eac8992ca}\label{classaction__client_1_1_client_a34470c1ce76859a768a6623eac8992ca}} 
+{\bfseries goal}
+\item 
+\mbox{\Hypertarget{classaction__client_1_1_client_a588d170a5a7b1adc2e83e0b9f718c1f5}\label{classaction__client_1_1_client_a588d170a5a7b1adc2e83e0b9f718c1f5}} 
+{\bfseries goal\+\_\+pub}
+\item 
+\mbox{\Hypertarget{classaction__client_1_1_client_a2a3d45f65421529b197f00b6cc39fe49}\label{classaction__client_1_1_client_a2a3d45f65421529b197f00b6cc39fe49}} 
+{\bfseries goal\+\_\+msg}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Action client for controlling the robot. 
+
+This class initializes the action client, sets up subscribers and publishers, and handles user input for setting or cancelling goals. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classaction__client_1_1_client_a733699a6967db10e340772d495f94474}\label{classaction__client_1_1_client_a733699a6967db10e340772d495f94474}} 
+\index{action\_client.Client@{action\_client.Client}!callback\_goal@{callback\_goal}}
+\index{callback\_goal@{callback\_goal}!action\_client.Client@{action\_client.Client}}
+\doxysubsubsection{\texorpdfstring{callback\_goal()}{callback\_goal()}}
+{\footnotesize\ttfamily def action\+\_\+client.\+Client.\+callback\+\_\+goal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Callback for goal status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Status data from /reaching\+\_\+goal/status topic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classaction__client_1_1_client_ae87e9a7f217a480736fc8160783e62d4}\label{classaction__client_1_1_client_ae87e9a7f217a480736fc8160783e62d4}} 
+\index{action\_client.Client@{action\_client.Client}!callback\_odom@{callback\_odom}}
+\index{callback\_odom@{callback\_odom}!action\_client.Client@{action\_client.Client}}
+\doxysubsubsection{\texorpdfstring{callback\_odom()}{callback\_odom()}}
+{\footnotesize\ttfamily def action\+\_\+client.\+Client.\+callback\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Callback for odometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Odometry data from /odom topic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{action__client_8py}{action\+\_\+client.\+py}}\end{DoxyCompactItemize}

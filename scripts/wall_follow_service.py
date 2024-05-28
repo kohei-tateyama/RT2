@@ -1,16 +1,33 @@
 #! /usr/bin/env python
 
+## @package assignment_2_2023
+# \file wall_follow_service.py 
+# \brief Implements wall following behavior for a robot.
+# \author Kohei Tateyama
+# \version 0.1 
+# \date 27/04/2024 
+# \details
+# This code subscribes to laser scan data and publishes velocity commands to follow walls. It uses a service to switch the wall following behavior on and off.
+
+# Subscribes to: <BR>
+# /scan
+
+# Publishes to: <BR>
+# /cmd_vel
+
+# Services: <BR>
+# /wall_follower_switch
+
+# Import necessary ROS packages and messages
 import rospy
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
-from nav_msgs.msg import Odometry
-from tf import transformations
 from std_srvs.srv import *
 
 import math
 
+# Initialize global variables
 active_ = False
-
 pub_ = None
 regions_ = {
     'right': 0,
@@ -26,7 +43,10 @@ state_dict_ = {
     2: 'follow the wall',
 }
 
-
+##
+# \brief Service callback to switch the wall follower on or off.
+# \param req Service request containing the activation state.
+# \return SetBoolResponse indicating success.
 def wall_follower_switch(req):
     global active_
     active_ = req.data
@@ -35,7 +55,10 @@ def wall_follower_switch(req):
     res.message = 'Done!'
     return res
 
-
+##
+# \brief Callback for laser scan data.
+# \param msg LaserScan message containing the distance measurements.
+# \return None
 def clbk_laser(msg):
     global regions_
     regions_ = {
@@ -48,14 +71,19 @@ def clbk_laser(msg):
 
     take_action()
 
-
+##
+# \brief Change the state of the state machine.
+# \param state New state to be set.
+# \return None
 def change_state(state):
     global state_, state_dict_
     if state is not state_:
-        print ('Wall follower - [%s] - %s' % (state, state_dict_[state]))
+        rospy.loginfo('Wall follower - [%s] - %s' % (state, state_dict_[state]))
         state_ = state
 
-
+##
+# \brief Take appropriate action based on the regions data.
+# \return None
 def take_action():
     global regions_
     regions = regions_
@@ -95,28 +123,34 @@ def take_action():
         state_description = 'unknown case'
         rospy.loginfo(regions)
 
-
+##
+# \brief Find the wall by moving forward and turning slightly.
+# \return Twist message with linear and angular velocities.
 def find_wall():
     msg = Twist()
     msg.linear.x = 0.2
     msg.angular.z = -0.3
     return msg
 
-
+##
+# \brief Turn left in place.
+# \return Twist message with angular velocity.
 def turn_left():
     msg = Twist()
     msg.angular.z = 0.3
     return msg
 
-
+##
+# \brief Follow the wall by moving forward.
+# \return Twist message with linear velocity.
 def follow_the_wall():
-    global regions_
-
     msg = Twist()
     msg.linear.x = 0.5
     return msg
 
-
+##
+# \brief Main function to initialize the node and control loop.
+# \return None
 def main():
     global pub_, active_
 
@@ -147,7 +181,6 @@ def main():
             pub_.publish(msg)
 
         rate.sleep()
-
 
 if __name__ == '__main__':
     main()

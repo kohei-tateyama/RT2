@@ -1,0 +1,104 @@
+\hypertarget{classget__dist_1_1_get_distance}{}\doxysection{get\+\_\+dist.\+Get\+Distance Class Reference}
+\label{classget__dist_1_1_get_distance}\index{get\_dist.GetDistance@{get\_dist.GetDistance}}
+
+
+Service server class for calculating the distance and average speed.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_aa481a28151bb0ce735ccbd6d7b0a5071}\label{classget__dist_1_1_get_distance_aa481a28151bb0ce735ccbd6d7b0a5071}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \mbox{\hyperlink{classget__dist_1_1_get_distance_ae95c1815be5c88e25439b96eae8f3959}{callback\+\_\+robot}} (self, data)
+\begin{DoxyCompactList}\small\item\em Callback for the robot\textquotesingle{}s position and velocity. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classget__dist_1_1_get_distance_a97badab04cc5f3b8a02e51cdfce9ad89}{callback\+\_\+goal}} (self, data)
+\begin{DoxyCompactList}\small\item\em Callback for the goal position. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classget__dist_1_1_get_distance_a8be98042e3bfb5aeb644552f19123490}{callback\+\_\+service}} (self, req)
+\begin{DoxyCompactList}\small\item\em Callback for the /\+Get\+Dist service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a4f3c37b240815a6de4e12f3c8ac65c75}\label{classget__dist_1_1_get_distance_a4f3c37b240815a6de4e12f3c8ac65c75}} 
+{\bfseries robot}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a64a74c52379ffdb25657f4d7e621d687}\label{classget__dist_1_1_get_distance_a64a74c52379ffdb25657f4d7e621d687}} 
+{\bfseries goal}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a076ccf4c52b67c930b2b65c3aaf7ab8d}\label{classget__dist_1_1_get_distance_a076ccf4c52b67c930b2b65c3aaf7ab8d}} 
+{\bfseries speedx}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_aec9d7e4c1bbb863e4636b25de06393a7}\label{classget__dist_1_1_get_distance_aec9d7e4c1bbb863e4636b25de06393a7}} 
+{\bfseries speedy}
+\item 
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a540c8f6a6b0efcf1fe6040f0459749c3}\label{classget__dist_1_1_get_distance_a540c8f6a6b0efcf1fe6040f0459749c3}} 
+{\bfseries target\+\_\+is\+\_\+set}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service server class for calculating the distance and average speed. 
+
+This class initializes the R\+OS node, subscribes to the goal and position topics, and provides a service to return the distance to the goal and the average speed of the robot. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a97badab04cc5f3b8a02e51cdfce9ad89}\label{classget__dist_1_1_get_distance_a97badab04cc5f3b8a02e51cdfce9ad89}} 
+\index{get\_dist.GetDistance@{get\_dist.GetDistance}!callback\_goal@{callback\_goal}}
+\index{callback\_goal@{callback\_goal}!get\_dist.GetDistance@{get\_dist.GetDistance}}
+\doxysubsubsection{\texorpdfstring{callback\_goal()}{callback\_goal()}}
+{\footnotesize\ttfamily def get\+\_\+dist.\+Get\+Distance.\+callback\+\_\+goal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Callback for the goal position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Goal message containing the goal\textquotesingle{}s position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_ae95c1815be5c88e25439b96eae8f3959}\label{classget__dist_1_1_get_distance_ae95c1815be5c88e25439b96eae8f3959}} 
+\index{get\_dist.GetDistance@{get\_dist.GetDistance}!callback\_robot@{callback\_robot}}
+\index{callback\_robot@{callback\_robot}!get\_dist.GetDistance@{get\_dist.GetDistance}}
+\doxysubsubsection{\texorpdfstring{callback\_robot()}{callback\_robot()}}
+{\footnotesize\ttfamily def get\+\_\+dist.\+Get\+Distance.\+callback\+\_\+robot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Callback for the robot\textquotesingle{}s position and velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Position message containing the robot\textquotesingle{}s position and velocity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classget__dist_1_1_get_distance_a8be98042e3bfb5aeb644552f19123490}\label{classget__dist_1_1_get_distance_a8be98042e3bfb5aeb644552f19123490}} 
+\index{get\_dist.GetDistance@{get\_dist.GetDistance}!callback\_service@{callback\_service}}
+\index{callback\_service@{callback\_service}!get\_dist.GetDistance@{get\_dist.GetDistance}}
+\doxysubsubsection{\texorpdfstring{callback\_service()}{callback\_service()}}
+{\footnotesize\ttfamily def get\+\_\+dist.\+Get\+Distance.\+callback\+\_\+service (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+Callback for the /\+Get\+Dist service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request (not used). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Get\+Dist\+Response with the distance and average speed. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{get__dist_8py}{get\+\_\+dist.\+py}}\end{DoxyCompactItemize}

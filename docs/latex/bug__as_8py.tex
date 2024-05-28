@@ -1,0 +1,193 @@
+\hypertarget{bug__as_8py}{}\doxysection{scripts/bug\+\_\+as.py File Reference}
+\label{bug__as_8py}\index{scripts/bug\_as.py@{scripts/bug\_as.py}}
+
+
+Implements the Bug algorithm for obstacle avoidance and goal reaching.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{bug__as_8py_ab60ee3a18f82901f764c228cab7715a9}{bug\+\_\+as.\+clbk\+\_\+odom}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback for odometry data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a4119d98608166ee0b88e091319a1bc36}{bug\+\_\+as.\+clbk\+\_\+laser}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback for laser scan data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a3c7d2081c97d59613bd86cecc92c95aa}{bug\+\_\+as.\+change\+\_\+state}} (state)
+\begin{DoxyCompactList}\small\item\em Change the state of the state machine. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a4cb91dd1a836fdcc1f433b72f9b6ef40}{bug\+\_\+as.\+normalize\+\_\+angle}} (angle)
+\begin{DoxyCompactList}\small\item\em Normalize the angle to be within the range of -\/pi to pi. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a2fe7a2b363215b1c6d054e563ff80d46}{bug\+\_\+as.\+done}} ()
+\begin{DoxyCompactList}\small\item\em Stop the robot by setting velocities to zero. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a94385d0a19f35bc8faab7ea1bb12324a}{bug\+\_\+as.\+planning}} (goal)
+\begin{DoxyCompactList}\small\item\em Planning function to handle goal reaching with obstacle avoidance. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{bug__as_8py_a9b1d3f586f8d4174c9c2ba2a074a35ea}{bug\+\_\+as.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to initialize the node and control loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bug__as_8py_aae11f9e7d34d042e3b75f990708f30b7}\label{bug__as_8py_aae11f9e7d34d042e3b75f990708f30b7}} 
+{\bfseries bug\+\_\+as.\+srv\+\_\+client\+\_\+go\+\_\+to\+\_\+point\+\_\+} = None
+\item 
+\mbox{\Hypertarget{bug__as_8py_aaf82618e313f873dcde442872ce41dca}\label{bug__as_8py_aaf82618e313f873dcde442872ce41dca}} 
+{\bfseries bug\+\_\+as.\+srv\+\_\+client\+\_\+wall\+\_\+follower\+\_\+} = None
+\item 
+\mbox{\Hypertarget{bug__as_8py_afc76d5b7eaf5bbc9d952a1424713adc5}\label{bug__as_8py_afc76d5b7eaf5bbc9d952a1424713adc5}} 
+int {\bfseries bug\+\_\+as.\+yaw\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{bug__as_8py_a27d35e323287c67a62f9e49aa85c81c0}\label{bug__as_8py_a27d35e323287c67a62f9e49aa85c81c0}} 
+int {\bfseries bug\+\_\+as.\+yaw\+\_\+error\+\_\+allowed\+\_\+} = 5 $\ast$ (math.\+pi / 180)
+\item 
+\mbox{\Hypertarget{bug__as_8py_a499f87dbcadef3fdd8bf1813ff254980}\label{bug__as_8py_a499f87dbcadef3fdd8bf1813ff254980}} 
+{\bfseries bug\+\_\+as.\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{bug__as_8py_a19167a19063724b9c82eb1ec62a73430}\label{bug__as_8py_a19167a19063724b9c82eb1ec62a73430}} 
+{\bfseries bug\+\_\+as.\+pose\+\_\+} = Pose()
+\item 
+\mbox{\Hypertarget{bug__as_8py_af85cbf56a31a686cd9c0ca7a925976c6}\label{bug__as_8py_af85cbf56a31a686cd9c0ca7a925976c6}} 
+{\bfseries bug\+\_\+as.\+desired\+\_\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{bug__as_8py_a5df7001712850734cef001cf0be212c8}\label{bug__as_8py_a5df7001712850734cef001cf0be212c8}} 
+{\bfseries bug\+\_\+as.\+z}
+\item 
+\mbox{\Hypertarget{bug__as_8py_a4c3231dd163d5f4503c5afde05d774e3}\label{bug__as_8py_a4c3231dd163d5f4503c5afde05d774e3}} 
+{\bfseries bug\+\_\+as.\+regions\+\_\+} = None
+\item 
+\mbox{\Hypertarget{bug__as_8py_ac5e332e5e1e9dec2ab24b79910c923b5}\label{bug__as_8py_ac5e332e5e1e9dec2ab24b79910c923b5}} 
+list {\bfseries bug\+\_\+as.\+state\+\_\+desc\+\_\+} = \mbox{[}\textquotesingle{}Go to point\textquotesingle{}, \textquotesingle{}wall following\textquotesingle{}, \textquotesingle{}done\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{bug__as_8py_abb23e110e8f093c82fe0f79ca0cd399d}\label{bug__as_8py_abb23e110e8f093c82fe0f79ca0cd399d}} 
+int {\bfseries bug\+\_\+as.\+state\+\_\+} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Bug algorithm for obstacle avoidance and goal reaching. 
+
+\begin{DoxyAuthor}{Author}
+Kohei Tateyama 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/04/2024
+\end{DoxyDate}
+This code subscribes to laser scan and odometry topics, and uses services to switch between going to a point and following walls. It uses an action server to manage reaching a goal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bug__as_8py_a3c7d2081c97d59613bd86cecc92c95aa}\label{bug__as_8py_a3c7d2081c97d59613bd86cecc92c95aa}} 
+\index{bug\_as.py@{bug\_as.py}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+change\+\_\+state (\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+
+
+Change the state of the state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & New state to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_a4119d98608166ee0b88e091319a1bc36}\label{bug__as_8py_a4119d98608166ee0b88e091319a1bc36}} 
+\index{bug\_as.py@{bug\_as.py}!clbk\_laser@{clbk\_laser}}
+\index{clbk\_laser@{clbk\_laser}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{clbk\_laser()}{clbk\_laser()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+clbk\+\_\+laser (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback for laser scan data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Laser\+Scan message containing the distance measurements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_ab60ee3a18f82901f764c228cab7715a9}\label{bug__as_8py_ab60ee3a18f82901f764c228cab7715a9}} 
+\index{bug\_as.py@{bug\_as.py}!clbk\_odom@{clbk\_odom}}
+\index{clbk\_odom@{clbk\_odom}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback for odometry data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Odometry message containing the robot\textquotesingle{}s position and orientation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_a2fe7a2b363215b1c6d054e563ff80d46}\label{bug__as_8py_a2fe7a2b363215b1c6d054e563ff80d46}} 
+\index{bug\_as.py@{bug\_as.py}!done@{done}}
+\index{done@{done}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the robot by setting velocities to zero. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_a9b1d3f586f8d4174c9c2ba2a074a35ea}\label{bug__as_8py_a9b1d3f586f8d4174c9c2ba2a074a35ea}} 
+\index{bug\_as.py@{bug\_as.py}!main@{main}}
+\index{main@{main}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize the node and control loop. 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_a4cb91dd1a836fdcc1f433b72f9b6ef40}\label{bug__as_8py_a4cb91dd1a836fdcc1f433b72f9b6ef40}} 
+\index{bug\_as.py@{bug\_as.py}!normalize\_angle@{normalize\_angle}}
+\index{normalize\_angle@{normalize\_angle}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{normalize\_angle()}{normalize\_angle()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+normalize\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{angle }\end{DoxyParamCaption})}
+
+
+
+Normalize the angle to be within the range of -\/pi to pi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle to be normalized. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bug__as_8py_a94385d0a19f35bc8faab7ea1bb12324a}\label{bug__as_8py_a94385d0a19f35bc8faab7ea1bb12324a}} 
+\index{bug\_as.py@{bug\_as.py}!planning@{planning}}
+\index{planning@{planning}!bug\_as.py@{bug\_as.py}}
+\doxysubsubsection{\texorpdfstring{planning()}{planning()}}
+{\footnotesize\ttfamily def bug\+\_\+as.\+planning (\begin{DoxyParamCaption}\item[{}]{goal }\end{DoxyParamCaption})}
+
+
+
+Planning function to handle goal reaching with obstacle avoidance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & The target goal position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
